@@ -1,6 +1,55 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+      <!-- ĐOẠN MÃ LÀM SINH ĐỘNG TRANG WEB (DÁN DƯỚI THẺ HEAD) -->
+    <style>
+        /* Tạo màu nền chuyển sắc (Gradient) dịu mắt cho trang học tập */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            line-height: 1.6;
+            color: #333;
+            padding: 20px;
+        }
+
+        /* Tự động tạo khung viền bo góc bo bóng đẹp mắt cho toàn bộ nội dung */
+        main, .content, body > div:not(.no-style) {
+            max-width: 800px;
+            margin: 30px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            /* Hiệu ứng xuất hiện mượt mà khi mở trang */
+            animation: slideUp 1s ease-out;
+        }
+
+        /* Làm nổi bật các tiêu đề học tập */
+        h1, h2, h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+        }
+
+        /* Hiệu ứng cho các đường link (nếu có) */
+        a {
+            color: #3498db;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        a:hover {
+            color: #1abc9c;
+            text-decoration: underline;
+        }
+
+        /* Định nghĩa hiệu ứng trượt nhẹ nhàng khi tải trang */
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    <!-- HẾT ĐOẠN MÃ TRANG TRÍ -->
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Toán 6 – Học dễ hiểu</title>
