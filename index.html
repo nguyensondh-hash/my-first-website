@@ -402,7 +402,6 @@ function buildNav(){const nv=$('nv');nv.innerHTML='';
 buildNav();
 show('home');
 </script>
-</body>
 <!-- Kết nối thư viện Supabase -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -416,5 +415,148 @@ show('home');
   );
 
   console.log("Đã khởi tạo kết nối Supabase");
-</script>    
+</script>  
+
+<section class="card" id="account-box" style="margin:16px auto;max-width:820px">
+  <h2>Tài khoản học sinh</h2>
+  <p id="account-message" role="status">
+    Đăng nhập để chuẩn bị lưu kết quả học tập theo tài khoản.
+  </p>
+
+  <form id="account-form">
+    <label for="account-name">Tên học sinh (khi đăng ký)</label>
+    <input id="account-name" type="text" maxlength="80"
+      autocomplete="name" placeholder="Ví dụ: Nguyễn An"
+      style="display:block;width:100%;padding:10px;margin:6px 0 12px">
+
+    <label for="account-email">Email</label>
+    <input id="account-email" type="email" required
+      autocomplete="email" placeholder="Email của bạn"
+      style="display:block;width:100%;padding:10px;margin:6px 0 12px">
+
+    <label for="account-password">Mật khẩu</label>
+    <input id="account-password" type="password" required
+      minlength="8" autocomplete="current-password"
+      placeholder="Ít nhất 8 ký tự"
+      style="display:block;width:100%;padding:10px;margin:6px 0 12px">
+
+    <button type="button" id="account-signup">Đăng ký</button>
+    <button type="submit" class="primary">Đăng nhập</button>
+    <button type="button" id="account-logout" hidden>Đăng xuất</button>
+  </form>
+</section>
+
+<script>
+(() => {
+  const form = document.getElementById("account-form");
+  const message = document.getElementById("account-message");
+  const nameInput = document.getElementById("account-name");
+  const emailInput = document.getElementById("account-email");
+  const passwordInput = document.getElementById("account-password");
+  const signupButton = document.getElementById("account-signup");
+  const logoutButton = document.getElementById("account-logout");
+
+  function showMessage(text) {
+    message.textContent = text;
+  }
+
+  async function refreshAccount() {
+    const { data, error } = await supabaseClient.auth.getUser();
+
+    if (error) {
+      showMessage("Chưa đăng nhập.");
+      logoutButton.hidden = true;
+      signupButton.hidden = false;
+      return;
+    }
+
+    if (data.user) {
+      showMessage("Đã đăng nhập: " + data.user.email);
+      logoutButton.hidden = false;
+      signupButton.hidden = true;
+      nameInput.hidden = true;
+    } else {
+      showMessage("Bạn chưa đăng nhập.");
+      logoutButton.hidden = true;
+      signupButton.hidden = false;
+      nameInput.hidden = false;
+    }
+  }
+
+  signupButton.addEventListener("click", async () => {
+    const email = emailInput.value.trim();
+    const password = passwordInput.value;
+    const displayName = nameInput.value.trim();
+
+    if (!email || password.length < 8) {
+      showMessage("Nhập email hợp lệ và mật khẩu ít nhất 8 ký tự.");
+      return;
+    }
+
+    signupButton.disabled = true;
+    const { data, error } = await supabaseClient.auth.signUp({
+      email,
+      password,
+      options: {
+        emailRedirectTo:
+          "https://toancap2.github.io/toan6-hoc-de-hieu/",
+        data: { display_name: displayName }
+      }
+    });
+    signupButton.disabled = false;
+
+    if (error) {
+      showMessage("Đăng ký chưa thành công: " + error.message);
+      return;
+    }
+
+    showMessage(
+      data.session
+        ? "Đăng ký thành công. Bạn có thể bắt đầu sử dụng tài khoản."
+        : "Đã gửi yêu cầu đăng ký. Hãy kiểm tra email để xác minh tài khoản."
+    );
+    await refreshAccount();
+  });
+
+  form.addEventListener("submit", async event => {
+    event.preventDefault();
+
+    const { error } = await supabaseClient.auth.signInWithPassword({
+      email: emailInput.value.trim(),
+      password: passwordInput.value
+    });
+
+    if (error) {
+      showMessage("Đăng nhập chưa thành công. Kiểm tra email, mật khẩu và xác minh email.");
+      return;
+    }
+
+    await refreshAccount();
+  });
+
+  logoutButton.addEventListener("click", async () => {
+    const { error } = await supabaseClient.auth.signOut();
+
+    if (error) {
+      showMessage("Đăng xuất chưa thành công.");
+      return;
+    }
+
+    nameInput.hidden = false;
+    passwordInput.value = "";
+    await refreshAccount();
+    showMessage("Bạn đã đăng xuất.");
+  });
+
+  supabaseClient.auth.onAuthStateChange(() => {
+    refreshAccount();
+  });
+
+  refreshAccount();
+})();
+</script>
+</body>
+</html>
+
+</body>
 </html>
