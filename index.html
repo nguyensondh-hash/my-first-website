@@ -546,7 +546,7 @@ show('home');
         async function checkUserSession() {
             const { data: { session } } = await supabase.auth.getSession();
             if (session) {
-                document.getElementById('auth-container').style.display = 'none';
+                               document.getElementById('auth-container').style.display = 'none';
                 document.getElementById('main-content').style.display = 'block';
                 document.getElementById('user-email').innerText = session.user.email;
             } else {
@@ -555,14 +555,16 @@ show('home');
             }
         }
 
+        // Hàm Đăng xuất tài khoản
         async function logout() {
             await supabase.auth.signOut();
             checkUserSession();
         }
 
-        // Tự động kiểm tra trạng thái khi học sinh vừa mở trang
+        // Tự động kiểm tra trạng thái đăng nhập ngay khi mở trang
         checkUserSession();
     </script>
 </body>
 </html>
+
 
