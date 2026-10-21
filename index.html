@@ -1,6 +1,52 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toán 6 – Học dễ hiểu</title>
+    <!-- Nhúng thư viện Supabase JS qua CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <style>
+        /* CSS căn chỉnh khung Đăng ký / Đăng nhập cơ bản */
+        #auth-container { max-width: 400px; margin: 50px auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; font-family: Arial, sans-serif; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input { width: 100%; padding: 8px; box-sizing: border-box; }
+        .btn { width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        .btn-alt { background-color: #6c757d; margin-top: 10px; }
+        .error-msg { color: red; font-size: 14px; margin-top: 10px; }
+        .success-msg { color: green; font-size: 14px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <!-- KHUNG ĐĂNG NHẬP / ĐĂNG KÝ (Mặc định hiển thị trước) -->
+    <div id="auth-container">
+        <h2 id="auth-title">Đăng Nhập Học Tập</h2>
+        <div class="form-group">
+            <label for="email">Email của phụ huynh/học sinh:</label>
+            <input type="email" id="email" placeholder="example@gmail.com">
+        </div>
+        <div class="form-group">
+            <label for="password">Mật khẩu:</label>
+            <input type="password" id="password" placeholder="Nhập mật khẩu ít nhất 6 ký tự">
+        </div>
+        
+        <button class="btn" id="btn-primary" onclick="handleAuth()">Đăng Nhập</button>
+        <button class="btn btn-alt" id="btn-toggle" onclick="toggleMode()">Chưa có tài khoản? Đăng ký ngay</button>
+        
+        <div id="message" class="error-msg"></div>
+    </div>
+
+    <!-- NỘI DUNG BÀI HỌC (Mặc định ẩn đi, chỉ hiện sau khi đã Đăng nhập thành công) -->
+    <div id="main-content" style="display: none;">
+        <div style="text-align: right; padding: 10px;">
+            <span id="user-email"></span> | <button onclick="logout()">Đăng xuất</button>
+        </div>
+        
+        <!-- <!DOCTYPE html>
+<html lang="vi">
+<head>
       <!-- ĐOẠN MÃ LÀM SINH ĐỘNG TRANG WEB (DÁN DƯỚI THẺ HEAD) -->
     <style>
         /* Tạo màu nền chuyển sắc (Gradient) dịu mắt cho trang học tập */
@@ -402,5 +448,92 @@ function buildNav(){const nv=$('nv');nv.innerHTML='';
 buildNav();
 show('home');
 </script>
+</body>
+</html>
+ -->
+        <h1>Toán 6 – Học dễ hiểu</h1>
+        <p>Miễn phí cho học sinh lớp 6, theo sách Kết nối tri thức với cuộc sống (học kì 1 và học kì 2).</p>
+        <hr>
+        <!-- Thêm các bài học của bạn ở đây -->
+    </div>
+
+    <script>
+        // 1. Điền thông tin Supabase của bạn vào đây
+        const SUPABASE_URL = "https://keggskvibeltkothqebq.supabase.co"; 
+        const SUPABASE_ANON_KEY = "sb_publishable_GYmUa9WNjhvDnhCQedwujw_V2jKPe_R";
+
+        // Khởi tạo kết nối Supabase Client
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        let isLoginMode = true; // Trạng thái ban đầu là Đăng nhập
+
+        // 2. Hàm chuyển đổi qua lại giữa giao diện Đăng ký và Đăng nhập
+        function toggleMode() {
+            isLoginMode = !isLoginMode;
+            document.getElementById('auth-title').innerText = isLoginMode ? "Đăng Nhập Học Tập" : "Đăng Ký Tài Khoản Mới";
+            document.getElementById('btn-primary').innerText = isLoginMode ? "Đăng Nhập" : "Đăng Ký";
+            document.getElementById('btn-toggle').innerText = isLoginMode ? "Chưa có tài khoản? Đăng ký ngay" : "Đã có tài khoản? Đăng nhập";
+            document.getElementById('message').innerText = "";
+        }
+
+        // 3. Hàm xử lý Đăng ký hoặc Đăng nhập khi bấm nút chính
+        async function handleAuth() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const msgDiv = document.getElementById('message');
+            msgDiv.innerText = "";
+
+            if (!email || !password) {
+                msgDiv.className = "error-msg";
+                msgDiv.innerText = "Vui lòng nhập đầy đủ Email và Mật khẩu.";
+                return;
+            }
+
+            if (isLoginMode) {
+                // Xử lý đăng nhập
+                const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+                if (error) {
+                    msgDiv.className = "error-msg";
+                    msgDiv.innerText = "Lỗi đăng nhập: " + error.message;
+                } else {
+                    checkUserSession();
+                }
+            } else {
+                // Xử lý đăng ký thành viên mới
+                const { data, error } = await supabase.auth.signUp({ email, password });
+                if (error) {
+                    msgDiv.className = "error-msg";
+                    msgDiv.innerText = "Lỗi đăng ký: " + error.message;
+                } else {
+                    msgDiv.className = "success-msg";
+                    msgDiv.innerText = "Đăng ký thành công! Hãy kiểm tra hộp thư Email để bấm liên kết xác nhận tài khoản trước khi đăng nhập.";
+                }
+            }
+        }
+
+        // 4. Hàm kiểm tra xem người dùng đã đăng nhập chưa khi tải trang
+        async function checkUserSession() {
+            const { data: { session } } = await supabase.auth.getSession();
+            if (session) {
+                // Đã đăng nhập: Hiện bài học, ẩn khung đăng nhập
+                document.getElementById('auth-container').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+                document.getElementById('user-email').innerText = session.user.email;
+            } else {
+                // Chưa đăng nhập: Hiện khung đăng nhập, ẩn bài học
+                document.getElementById('auth-container').style.display = 'block';
+                document.getElementById('main-content').style.display = 'none';
+            }
+        }
+
+        // 5. Hàm đăng xuất tài khoản
+        async function logout() {
+            await supabase.auth.signOut();
+            checkUserSession();
+        }
+
+        // Tự động kiểm tra trạng thái đăng nhập ngay khi học sinh vừa mở trang web lên
+        checkUserSession();
+    </script>
 </body>
 </html>
