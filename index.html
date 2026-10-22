@@ -352,7 +352,7 @@ V.ls=()=>{
  const del=el('button',null,'Xóa lịch sử');del.style.marginTop='12px';let ask=false;del.onclick=()=>{if(!ask){ask=true;del.textContent='Bấm lần nữa để xác nhận xóa';return}try{localStorage.removeItem(HKEY)}catch(e){}show('ls')};c.append(del);return c};
 // ===== Ngân hàng đề Supabase =====
 // Dán Project URL và Publishable key từ Supabase Dashboard > Project Settings > API.
-const SB_URL='https://otzwhdrnrtnyutmgqnhc.supabase.co';
+const SB_URL='https://otzwhdrnrtnyutmgqnhc.supabase.co/rest/v1/';
 const SB_KEY='sb_publishable_0dCr_3FKAXiUbO-fT3G54w_g4SYZkA2';
 let sb=null, bankUser=null, bankAdmin=false, bankQuestions=[], bankCurrent=[], bankStartedAt=0, bankTimer=null;
 function bankReady(){
