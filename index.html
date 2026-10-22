@@ -1,55 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-      <!-- ĐOẠN MÃ LÀM SINH ĐỘNG TRANG WEB (DÁN DƯỚI THẺ HEAD) -->
-    <style>
-        /* Tạo màu nền chuyển sắc (Gradient) dịu mắt cho trang học tập */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            line-height: 1.6;
-            color: #333;
-            padding: 20px;
-        }
-
-        /* Tự động tạo khung viền bo góc bo bóng đẹp mắt cho toàn bộ nội dung */
-        main, .content, body > div:not(.no-style) {
-            max-width: 800px;
-            margin: 30px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            /* Hiệu ứng xuất hiện mượt mà khi mở trang */
-            animation: slideUp 1s ease-out;
-        }
-
-        /* Làm nổi bật các tiêu đề học tập */
-        h1, h2, h3 {
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 8px;
-        }
-
-        /* Hiệu ứng cho các đường link (nếu có) */
-        a {
-            color: #3498db;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        a:hover {
-            color: #1abc9c;
-            text-decoration: underline;
-        }
-
-        /* Định nghĩa hiệu ứng trượt nhẹ nhàng khi tải trang */
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
-    <!-- HẾT ĐOẠN MÃ TRANG TRÍ -->
-
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Toán 6 – Học dễ hiểu</title>
@@ -91,6 +42,13 @@ legend{font-weight:600;padding:0;margin-bottom:4px}
 .res{margin-top:10px;font-weight:600}
 .sol{color:var(--mute);margin:6px 0 0}
 [hidden]{display:none!important}
+
+.bank-toolbar{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:10px;margin:12px 0}
+.bank-toolbar label{display:grid;gap:4px;font-size:.9rem;color:var(--mute)}
+.bank-toolbar select,.bank-toolbar input,.bank-form input,.bank-form select,.bank-form textarea,.bank-form button{font:inherit;padding:9px 10px;border:1px solid var(--line);border-radius:9px;background:var(--bg);color:var(--ink);width:100%}
+.bank-form{display:grid;gap:9px;margin-top:12px}.bank-form textarea{min-height:72px;resize:vertical}
+.bank-q{padding:14px 0;border-top:1px solid var(--line)}.bank-q:first-child{border-top:0}.bank-status{font-size:.92rem;color:var(--mute);margin:8px 0}.bank-actions{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}.bank-actions button.primary{background:var(--accent);color:var(--accent-ink)}
+.bank-option{display:flex;gap:8px;align-items:flex-start;margin:7px 0}.bank-option input{margin-top:5px}.bank-result{padding:10px;border-radius:10px;background:var(--soft);margin-top:10px}
 </style>
 </head>
 <body>
@@ -101,6 +59,7 @@ legend{font-weight:600;padding:0;margin-bottom:4px}
 <nav aria-label="Mục chính"><div id="nv"></div></nav>
 <main id="mn"></main>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 const $=id=>document.getElementById(id);
 /* ===== Dữ liệu ===== */
@@ -391,7 +350,77 @@ V.ls=()=>{
  a.slice().reverse().slice(0,40).forEach(x=>{const r=document.createElement('tr');r.append(td(new Date(x.d).toLocaleString('vi-VN',{dateStyle:'short',timeStyle:'short'})),td(x.w||'–'),td(x.k),td(String(x.s).replace('.',',')+'/'+String(x.m).replace('.',','),'right'));t.append(r)});
  wr.append(t);c.append(wr);
  const del=el('button',null,'Xóa lịch sử');del.style.marginTop='12px';let ask=false;del.onclick=()=>{if(!ask){ask=true;del.textContent='Bấm lần nữa để xác nhận xóa';return}try{localStorage.removeItem(HKEY)}catch(e){}show('ls')};c.append(del);return c};
-const NAV=[['home','Trang chủ'],['kt','Kiến thức'],['fm','Công thức'],['dt','Dạng toán'],['bt','Bài tập'],['lt','Luyện tập'],['t15','KT 15 phút'],['t45','KT 45 phút'],['hk','Thi học kì'],['ls','Lịch sử điểm']];
+// ===== Ngân hàng đề Supabase =====
+// Dán Project URL và Publishable key từ Supabase Dashboard > Project Settings > API.
+const SB_URL='https://otzwhdrnrtnyutmgqnhc.supabase.co';
+const SB_KEY='sb_publishable_0dCr_3FKAXiUbO-fT3G54w_g4SYZkA2';
+let sb=null, bankUser=null, bankAdmin=false, bankQuestions=[], bankCurrent=[], bankStartedAt=0, bankTimer=null;
+function bankReady(){
+ if(!window.supabase){alert('Chưa tải được thư viện Supabase. Kiểm tra kết nối Internet rồi tải lại trang.');return false}
+ if(!SB_URL.startsWith('https://')||SB_KEY.includes('PASTE_')){alert('Cần điền SB_URL và SB_KEY ở đầu phần “Ngân hàng đề Supabase” trong index.html.');return false}
+ if(!sb)sb=window.supabase.createClient(SB_URL,SB_KEY);
+ return true
+}
+async function bankRefreshAuth(){
+ if(!bankReady())return;
+ const {data:{session}}=await sb.auth.getSession();bankUser=session?.user||null;bankAdmin=false;
+ if(bankUser){const {data}=await sb.from('profiles').select('role').eq('id',bankUser.id).maybeSingle();bankAdmin=data?.role==='admin'}
+}
+function bankField(label,tag,attrs={}){const l=el('label');l.textContent=label;const i=document.createElement(tag);Object.entries(attrs).forEach(([k,v])=>i.setAttribute(k,v));l.append(i);return {label:l,input:i}}
+function bankOptionText(q){return Array.isArray(q.options)?q.options:[]}
+function bankQuestionCard(q,index,admin=false){
+ const d=el('div','bank-q');d.append(el('h3',null,(index+1)+'. '+(q.question_type==='essay'?'Tự luận':'Trắc nghiệm')+' · '+(q.difficulty||'cơ bản')));
+ const statement=el('p');statement.textContent=q.content||'';d.append(statement);
+ if(q.question_type!=='essay')bankOptionText(q).forEach((op,i)=>{const l=el('label','bank-option');const inp=document.createElement('input');inp.type='radio';inp.name='bq_'+q.id;inp.value=String(i);const t=document.createElement('span');t.textContent=String.fromCharCode(65+i)+'. '+op;l.append(inp,t);d.append(l)});
+ if(admin){const meta=el('p','sub');meta.textContent=`${q.semester||'—'} · ${q.chapter||'—'} · ${q.topic||'Chưa phân chủ đề'} · ${q.status}`;d.append(meta);const row=el('div','bank-actions');const edit=el('button',null,'Sửa');edit.onclick=()=>bankFillEditor(q);const del=el('button',null,'Xóa');del.onclick=async()=>{if(confirm('Xóa câu hỏi này khỏi ngân hàng?')){const {error}=await sb.from('question_bank').delete().eq('id',q.id);if(error)alert(error.message);else{await bankLoad();show('bank')}}};row.append(edit,del);d.append(row)}
+ return d
+}
+async function bankLoad(){
+ if(!bankReady())return;
+ const status=$('bank-status');if(status)status.textContent='Đang tải ngân hàng câu hỏi…';
+ let query=sb.from('question_bank').select('*').order('created_at',{ascending:false}).limit(1000);
+ const semSel=$('bank-sem'),chapSel=$('bank-chapter'),diffSel=$('bank-difficulty'),typeSel=$('bank-type');
+ if(semSel?.value)query=query.eq('semester',Number(semSel.value));if(chapSel?.value)query=query.eq('chapter',chapSel.value);if(diffSel?.value)query=query.eq('difficulty',diffSel.value);if(typeSel?.value)query=query.eq('question_type',typeSel.value);
+ if(!bankAdmin)query=query.eq('status','published');
+ const {data,error}=await query;if(error){if(status)status.textContent='Không tải được câu hỏi: '+error.message;return}
+ bankQuestions=data||[];if(status)status.textContent=`Đang có ${bankQuestions.length} câu phù hợp bộ lọc${bankAdmin?' (quản trị viên)':''}.`;
+ const list=$('bank-list');if(list){list.innerHTML='';if(!bankQuestions.length)list.append(el('p','sub','Chưa có câu hỏi phù hợp. Hãy nhập câu hỏi bằng tài khoản quản trị hoặc điều chỉnh bộ lọc.'));bankQuestions.forEach((q,i)=>list.append(bankQuestionCard(q,i,bankAdmin)))}
+}
+function bankFillEditor(q){
+ const f=$('bank-editor');if(!f)return;f.dataset.id=q.id;f.querySelector('[name=content]').value=q.content||'';f.querySelector('[name=options]').value=(q.options||[]).join('\n');f.querySelector('[name=answer]').value=q.answer||'';f.querySelector('[name=solution]').value=q.solution||'';f.querySelector('[name=semester]').value=q.semester||1;f.querySelector('[name=chapter]').value=q.chapter||'Chương 1';f.querySelector('[name=topic]').value=q.topic||'';f.querySelector('[name=difficulty]').value=q.difficulty||'basic';f.querySelector('[name=question_type]').value=q.question_type||'mcq';f.querySelector('[name=status]').value=q.status||'draft';f.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function bankResetEditor(){const f=$('bank-editor');if(f){f.reset();delete f.dataset.id}}
+async function bankSaveQuestion(ev){ev.preventDefault();if(!bankReady()||!bankAdmin){alert('Chỉ tài khoản quản trị mới được thêm/sửa câu hỏi.');return}
+ const f=ev.currentTarget,fd=new FormData(f),id=f.dataset.id;const typ=fd.get('question_type');const options=String(fd.get('options')||'').split('\n').map(x=>x.trim()).filter(Boolean);
+ const payload={content:String(fd.get('content')).trim(),options:typ==='mcq'?options:[],answer:String(fd.get('answer')).trim(),solution:String(fd.get('solution')||'').trim(),semester:Number(fd.get('semester')),chapter:String(fd.get('chapter')),topic:String(fd.get('topic')||'').trim(),difficulty:String(fd.get('difficulty')),question_type:typ,status:String(fd.get('status'))};
+ if(!payload.content||!payload.answer||(typ==='mcq'&&(options.length<2||!/^\d+$/.test(payload.answer)||Number(payload.answer)<0||Number(payload.answer)>=options.length))){alert('Kiểm tra nội dung, đáp án. Với trắc nghiệm, đáp án là số thứ tự từ 0 (A), 1 (B), 2 (C), 3 (D) và cần ít nhất 2 lựa chọn.');return}
+ let res=id?await sb.from('question_bank').update(payload).eq('id',id):await sb.from('question_bank').insert({...payload,created_by:bankUser.id});if(res.error){alert('Lưu thất bại: '+res.error.message);return}alert('Đã lưu câu hỏi.');bankResetEditor();await bankLoad();
+}
+async function bankStartTest(){await bankRefreshAuth();if(!bankUser){alert('Vui lòng đăng nhập trước khi làm đề.');return}await bankLoad();const num=Math.max(1,Math.min(50,Number($('bank-count')?.value||15)));if(bankQuestions.length<num){alert(`Bộ lọc hiện có ${bankQuestions.length} câu, chưa đủ ${num} câu. Hãy bỏ bớt bộ lọc hoặc bổ sung câu hỏi.`);return}
+ bankCurrent=bankQuestions.slice().sort(()=>Math.random()-.5).slice(0,num);bankStartedAt=Date.now();const out=$('bank-test-area');out.innerHTML='';const pv=$('bank-preset')?.value;const pname=({15:'Kiểm tra 15 phút',45:'Kiểm tra 45 phút',hk1:'Đề thi học kì 1',hk2:'Đề thi học kì 2'})[pv]||'Đề luyện tập ngẫu nhiên';out.append(el('h2',null,pname),el('p','sub',`Gồm ${num} câu được lấy ngẫu nhiên từ ngân hàng. Trả lời xong bấm Chấm điểm; phần trắc nghiệm được tự chấm.`));bankCurrent.forEach((q,i)=>out.append(bankQuestionCard(q,i,false)));
+ const submit=el('button','primary','Chấm điểm');submit.onclick=()=>bankGradeTest();out.append(submit);out.scrollIntoView({behavior:'smooth'});
+}
+async function bankGradeTest(){let right=0,answered=0;bankCurrent.forEach(q=>{if(q.question_type==='essay')return;const sel=document.querySelector(`input[name="bq_${q.id}"]:checked`);if(sel){answered++;if(Number(sel.value)===Number(q.answer))right++}});const mcq=bankCurrent.filter(q=>q.question_type!=='essay').length;const score=mcq?Math.round(right/mcq*100):0;const box=el('div','bank-result');box.textContent=`Kết quả trắc nghiệm: đúng ${right}/${mcq} câu (${score}%). Đã trả lời ${answered}/${mcq} câu trắc nghiệm. Câu tự luận cần đối chiếu lời giải.`;const out=$('bank-test-area');out.prepend(box);bankCurrent.forEach((q,i)=>{const d=el('details');const sum=el('summary',null,'Đáp án và lời giải câu '+(i+1));const ans=el('p');ans.textContent=q.question_type==='essay'?('Gợi ý đáp án: '+q.answer):('Đáp án: '+(bankOptionText(q)[Number(q.answer)]||q.answer));const sol=el('p','sol');sol.textContent=q.solution||'Chưa có lời giải chi tiết.';d.append(sum,ans,sol);out.append(d)});}
+V.bank=()=>{
+ const c=el('div');c.append(el('h2',null,'Ngân hàng đề Toán 6'),el('p','sub','Nguồn câu hỏi được lưu trên Supabase. Đề luyện tập lấy ngẫu nhiên từ các câu đã xuất bản theo bộ lọc bên dưới.'));
+ const auth=el('div','card');auth.append(el('h3',null,'Tài khoản học sinh / giáo viên'));
+ const email=bankField('Email','input',{type:'email',autocomplete:'email',placeholder:'email@example.com'});const pass=bankField('Mật khẩu','input',{type:'password',autocomplete:'current-password',placeholder:'Mật khẩu'});const status=el('p','bank-status');status.id='bank-status';
+ const actions=el('div','bank-actions');const login=el('button','primary','Đăng nhập');login.onclick=async()=>{if(!bankReady())return;const {error}=await sb.auth.signInWithPassword({email:email.input.value,password:pass.input.value});if(error){status.textContent='Đăng nhập chưa thành công: '+error.message;return}await bankRefreshAuth();status.textContent='Đã đăng nhập'+(bankAdmin?' · quyền quản trị':'');await bankLoad();show('bank')};const signup=el('button',null,'Tạo tài khoản');signup.onclick=async()=>{if(!bankReady())return;const {error}=await sb.auth.signUp({email:email.input.value,password:pass.input.value});status.textContent=error?'Không tạo được tài khoản: '+error.message:'Đã gửi yêu cầu đăng ký. Nếu dự án bật xác nhận email, hãy mở email để xác nhận.'};const logout=el('button',null,'Đăng xuất');logout.onclick=async()=>{if(bankReady())await sb.auth.signOut();bankUser=null;bankAdmin=false;status.textContent='Đã đăng xuất.';show('bank')};actions.append(login,signup,logout);auth.append(email.label,pass.label,actions,status);c.append(auth);
+ const filters=el('div','card');filters.append(el('h3',null,'Lọc câu hỏi / tạo đề'));const bar=el('div','bank-toolbar');
+ const addSel=(label,id,opts)=>{const f=bankField(label,'select',{});f.input.id=id;opts.forEach(([v,t])=>{const o=document.createElement('option');o.value=v;o.textContent=t;f.input.append(o)});f.input.onchange=()=>bankLoad();bar.append(f.label)};
+ addSel('Học kì','bank-sem',[['','Tất cả học kì'],['1','Học kì 1'],['2','Học kì 2']]);addSel('Chương','bank-chapter',[['','Tất cả chương'],...Array.from({length:9},(_,i)=>[`Chương ${i+1}`,`Chương ${i+1}`])]);addSel('Mức độ','bank-difficulty',[['','Tất cả mức độ'],['basic','Cơ bản'],['understanding','Thông hiểu'],['application','Vận dụng'],['advanced','Nâng cao']]);addSel('Loại câu','bank-type',[['','Tất cả dạng'],['mcq','Trắc nghiệm'],['essay','Tự luận']]);
+ const preset=bankField('Loại đề','select',{});preset.input.id='bank-preset';[['custom','Tự tạo đề'],['15','Kiểm tra 15 phút'],['45','Kiểm tra 45 phút'],['hk1','Thi học kì 1'],['hk2','Thi học kì 2']].forEach(([v,t])=>{const o=document.createElement('option');o.value=v;o.textContent=t;preset.input.append(o)});preset.input.onchange=()=>{const v=preset.input.value;if(v==='hk1')$('bank-sem').value='1';if(v==='hk2')$('bank-sem').value='2';if(v==='15')$('bank-count').value='10';if(v==='45')$('bank-count').value='20';if(v==='hk1'||v==='hk2')$('bank-count').value='30';if(v==='custom')$('bank-count').value='15';bankLoad()};bar.append(preset.label);const count=bankField('Số câu/đề','select',{});count.input.id='bank-count';[['10','10 câu'],['15','15 câu'],['20','20 câu'],['30','30 câu'],['40','40 câu']].forEach(([v,t])=>{const o=document.createElement('option');o.value=v;o.textContent=t;count.input.append(o)});bar.append(count.label);filters.append(bar);const make=el('button','primary','Tạo đề ngẫu nhiên');make.onclick=bankStartTest;filters.append(make);c.append(filters);
+ const listCard=el('div','card');listCard.append(el('h3',null,'Danh sách câu hỏi'));const list=el('div');list.id='bank-list';listCard.append(list);c.append(listCard);
+ const test=el('div','card');test.id='bank-test-area';c.append(test);
+ const admin=el('div','card');admin.append(el('h3',null,'Quản trị ngân hàng câu hỏi'),el('p','sub','Chỉ tài khoản có role = admin trong bảng profiles mới thêm/sửa/xóa được câu hỏi. Đáp án trắc nghiệm nhập 0 cho A, 1 cho B, 2 cho C, 3 cho D.'));
+ const form=document.createElement('form');form.id='bank-editor';form.className='bank-form';form.onsubmit=bankSaveQuestion;
+ const addInput=(name,label,type='text',required=false)=>{const tag=type==='textarea'?'textarea':'input';const attrs={name};if(tag==='input')attrs.type=type;const f=bankField(label,tag,attrs);if(required)f.input.required=true;form.append(f.label)};
+ addInput('content','Nội dung câu hỏi','text',true);addInput('options','Các lựa chọn trắc nghiệm (mỗi lựa chọn một dòng; bỏ trống nếu tự luận)','textarea');addInput('answer','Đáp án (trắc nghiệm: 0=A, 1=B, 2=C, 3=D; tự luận: nhập đáp án/gợi ý)','text',true);addInput('solution','Lời giải / hướng dẫn chấm','textarea');
+ const addFormSelect=(name,label,opts)=>{const f=bankField(label,'select',{name});opts.forEach(([v,t])=>{const o=document.createElement('option');o.value=v;o.textContent=t;f.input.append(o)});form.append(f.label)};
+ addFormSelect('semester','Học kì',[['1','Học kì 1'],['2','Học kì 2']]);addFormSelect('chapter','Chương',Array.from({length:9},(_,i)=>[`Chương ${i+1}`,`Chương ${i+1}`]));addInput('topic','Chủ đề');addFormSelect('difficulty','Mức độ',[['basic','Cơ bản'],['understanding','Thông hiểu'],['application','Vận dụng'],['advanced','Nâng cao']]);addFormSelect('question_type','Dạng câu hỏi',[['mcq','Trắc nghiệm'],['essay','Tự luận']]);addFormSelect('status','Trạng thái',[['draft','Bản nháp'],['published','Xuất bản']]);const buttons=el('div','bank-actions');const save=el('button','primary','Lưu câu hỏi');save.type='submit';const reset=el('button',null,'Làm mới biểu mẫu');reset.type='button';reset.onclick=bankResetEditor;buttons.append(save,reset);form.append(buttons);admin.append(form);c.append(admin);
+ (async()=>{await bankRefreshAuth();status.textContent=bankUser?('Đã đăng nhập'+(bankAdmin?' · quyền quản trị':'')+'.'):'Chưa đăng nhập.';admin.hidden=!bankAdmin;await bankLoad()})();return c
+};
+const NAV=[['home','Trang chủ'],['kt','Kiến thức'],['fm','Công thức'],['dt','Dạng toán'],['bt','Bài tập'],['lt','Luyện tập'],['t15','KT 15 phút'],['t45','KT 45 phút'],['hk','Thi học kì'],['ls','Lịch sử điểm'],['bank','Ngân hàng đề']];
 let curK='home';function show(k){curK=k;
  $('nv').querySelectorAll('button').forEach(b=>{if(b.dataset.k===k)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});
  const m=$('mn');m.innerHTML='';m.append(V[k]());window.scrollTo(0,0);
@@ -402,161 +431,5 @@ function buildNav(){const nv=$('nv');nv.innerHTML='';
 buildNav();
 show('home');
 </script>
-<!-- Kết nối thư viện Supabase -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<script>
-  const SUPABASE_URL = "https://keggskvibeltkothqebq.supabase.co";
-  const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_GYmUa9WNjhvDnhCQedwujw_V2jKPe_R";
-
-  const supabaseClient = window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_PUBLISHABLE_KEY
-  );
-
-  console.log("Đã khởi tạo kết nối Supabase");
-</script>  
-
-<section class="card" id="account-box" style="margin:16px auto;max-width:820px">
-  <h2>Tài khoản học sinh</h2>
-  <p id="account-message" role="status">
-    Đăng nhập để chuẩn bị lưu kết quả học tập theo tài khoản.
-  </p>
-
-  <form id="account-form">
-    <label for="account-name">Tên học sinh (khi đăng ký)</label>
-    <input id="account-name" type="text" maxlength="80"
-      autocomplete="name" placeholder="Ví dụ: Nguyễn An"
-      style="display:block;width:100%;padding:10px;margin:6px 0 12px">
-
-    <label for="account-email">Email</label>
-    <input id="account-email" type="email" required
-      autocomplete="email" placeholder="Email của bạn"
-      style="display:block;width:100%;padding:10px;margin:6px 0 12px">
-
-    <label for="account-password">Mật khẩu</label>
-    <input id="account-password" type="password" required
-      minlength="8" autocomplete="current-password"
-      placeholder="Ít nhất 8 ký tự"
-      style="display:block;width:100%;padding:10px;margin:6px 0 12px">
-
-    <button type="button" id="account-signup">Đăng ký</button>
-    <button type="submit" class="primary">Đăng nhập</button>
-    <button type="button" id="account-logout" hidden>Đăng xuất</button>
-  </form>
-</section>
-
-<script>
-(() => {
-  const form = document.getElementById("account-form");
-  const message = document.getElementById("account-message");
-  const nameInput = document.getElementById("account-name");
-  const emailInput = document.getElementById("account-email");
-  const passwordInput = document.getElementById("account-password");
-  const signupButton = document.getElementById("account-signup");
-  const logoutButton = document.getElementById("account-logout");
-
-  function showMessage(text) {
-    message.textContent = text;
-  }
-
-  async function refreshAccount() {
-    const { data, error } = await supabaseClient.auth.getUser();
-
-    if (error) {
-      showMessage("Chưa đăng nhập.");
-      logoutButton.hidden = true;
-      signupButton.hidden = false;
-      return;
-    }
-
-    if (data.user) {
-      showMessage("Đã đăng nhập: " + data.user.email);
-      logoutButton.hidden = false;
-      signupButton.hidden = true;
-      nameInput.hidden = true;
-    } else {
-      showMessage("Bạn chưa đăng nhập.");
-      logoutButton.hidden = true;
-      signupButton.hidden = false;
-      nameInput.hidden = false;
-    }
-  }
-
-  signupButton.addEventListener("click", async () => {
-    const email = emailInput.value.trim();
-    const password = passwordInput.value;
-    const displayName = nameInput.value.trim();
-
-    if (!email || password.length < 8) {
-      showMessage("Nhập email hợp lệ và mật khẩu ít nhất 8 ký tự.");
-      return;
-    }
-
-    signupButton.disabled = true;
-    const { data, error } = await supabaseClient.auth.signUp({
-      email,
-      password,
-      options: {
-        emailRedirectTo:
-          "https://toancap2.github.io/toan6-hoc-de-hieu/",
-        data: { display_name: displayName }
-      }
-    });
-    signupButton.disabled = false;
-
-    if (error) {
-      showMessage("Đăng ký chưa thành công: " + error.message);
-      return;
-    }
-
-    showMessage(
-      data.session
-        ? "Đăng ký thành công. Bạn có thể bắt đầu sử dụng tài khoản."
-        : "Đã gửi yêu cầu đăng ký. Hãy kiểm tra email để xác minh tài khoản."
-    );
-    await refreshAccount();
-  });
-
-  form.addEventListener("submit", async event => {
-    event.preventDefault();
-
-    const { error } = await supabaseClient.auth.signInWithPassword({
-      email: emailInput.value.trim(),
-      password: passwordInput.value
-    });
-
-    if (error) {
-      showMessage("Đăng nhập chưa thành công. Kiểm tra email, mật khẩu và xác minh email.");
-      return;
-    }
-
-    await refreshAccount();
-  });
-
-  logoutButton.addEventListener("click", async () => {
-    const { error } = await supabaseClient.auth.signOut();
-
-    if (error) {
-      showMessage("Đăng xuất chưa thành công.");
-      return;
-    }
-
-    nameInput.hidden = false;
-    passwordInput.value = "";
-    await refreshAccount();
-    showMessage("Bạn đã đăng xuất.");
-  });
-
-  supabaseClient.auth.onAuthStateChange(() => {
-    refreshAccount();
-  });
-
-  refreshAccount();
-})();
-</script>
-</body>
-</html>
-
 </body>
 </html>
