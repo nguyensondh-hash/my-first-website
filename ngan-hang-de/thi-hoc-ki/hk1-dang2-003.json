@@ -1,0 +1,225 @@
+{
+ "id": "hk1-dang2-003",
+ "loai": "thi",
+ "hoc_ki": 1,
+ "dang": "Dạng 2: 20 TN + 3 TL (Chương 1 – 5)",
+ "tieu_de": "Đề thi học kì 1 – Dạng 2 – Đề 3",
+ "thoi_gian": "90 phút",
+ "diem_moi_cau": 0.25,
+ "trac_nghiem": [
+  {
+   "q": "Giá trị của 26 · 85 + 26 · 15 là:",
+   "o": [
+    "26000",
+    "2600",
+    "260",
+    "2626"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Cho tập hợp A gồm các số tự nhiên nhỏ hơn 4. Số phần tử của A là:",
+   "o": [
+    "5",
+    "6",
+    "4",
+    "3"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Viết 2⁵ · 2² dưới dạng một lũy thừa:",
+   "o": [
+    "2⁷",
+    "4⁷",
+    "2¹⁰",
+    "2⁸"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Kết quả của 2⁷ : 2³ viết dưới dạng lũy thừa là:",
+   "o": [
+    "2⁴",
+    "2²¹",
+    "2⁵",
+    "2¹⁰"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Số nào sau đây là bội của 4?",
+   "o": [
+    "29",
+    "28",
+    "27",
+    "30"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Số nào sau đây chia hết cho cả 2 và 5?",
+   "o": [
+    "3 279",
+    "582",
+    "5 995",
+    "8 570"
+   ],
+   "a": 3
+  },
+  {
+   "q": "BCNN(15, 9) là:",
+   "o": [
+    "90",
+    "45",
+    "135",
+    "3"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Số nào sau đây là số nguyên tố?",
+   "o": [
+    "39",
+    "21",
+    "49",
+    "19"
+   ],
+   "a": 3
+  },
+  {
+   "q": "Số nào sau đây là hợp số?",
+   "o": [
+    "29",
+    "21",
+    "31",
+    "37"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Kết quả của 2 + 7 là:",
+   "o": [
+    "9",
+    "−9",
+    "−5",
+    "5"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Kết quả của (−7) · (−1) là:",
+   "o": [
+    "−6",
+    "7",
+    "−8",
+    "−7"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Giá trị tuyệt đối của −16 là:",
+   "o": [
+    "−16",
+    "16",
+    "17",
+    "0"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Trong các số 4; 0; 15; −3, số nhỏ nhất là:",
+   "o": [
+    "15",
+    "−3",
+    "0",
+    "4"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Hình nào sau đây có hai đường chéo vuông góc với nhau?",
+   "o": [
+    "Hình thoi",
+    "Hình chữ nhật",
+    "Hình bình hành",
+    "Hình thang cân"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Hình bình hành có cạnh đáy 8 cm và chiều cao 9 cm. Diện tích là:",
+   "o": [
+    "17 cm²",
+    "144 cm²",
+    "72 cm²",
+    "34 cm²"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Hình nào sau đây có hai đường chéo bằng nhau?",
+   "o": [
+    "Hình bình hành",
+    "Tam giác đều",
+    "Hình thoi",
+    "Hình chữ nhật"
+   ],
+   "a": 3
+  },
+  {
+   "q": "Hình thang cân có hai đáy 8 cm, 12 cm và chiều cao 10 cm. Diện tích là:",
+   "o": [
+    "80 cm²",
+    "200 cm²",
+    "100 cm²",
+    "30 cm²"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Tam giác đều có bao nhiêu trục đối xứng?",
+   "o": [
+    "2",
+    "3",
+    "1",
+    "6"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Hình vuông có bao nhiêu trục đối xứng?",
+   "o": [
+    "2",
+    "3",
+    "1",
+    "4"
+   ],
+   "a": 3
+  },
+  {
+   "q": "Lục giác đều có bao nhiêu trục đối xứng?",
+   "o": [
+    "12",
+    "3",
+    "4",
+    "6"
+   ],
+   "a": 3
+  }
+ ],
+ "tu_luan": [
+  {
+   "de": "Bài 1 (2 điểm). Tính (tính hợp lý nếu có thể): a) 3⁴ · 2 − 72 : 3²   b) 23 + 77 + 48 + 52   c) 58 · 43 + 58 · 57",
+   "giai": "a) = 81 · 2 − 72 : 9 = 162 − 8 = 154. b) = (48 + 52) + (23 + 77) = 100 + 100 = 200. c) = 58 · (43 + 57) = 58 · 100 = 5 800."
+  },
+  {
+   "de": "Bài 2 (1,5 điểm). a) Phân tích 280 và 30 ra thừa số nguyên tố.   b) Tìm ƯCLN(280, 30) và BCNN(280, 30).",
+   "giai": "a) 280 = 2³ · 5 · 7; 30 = 2 · 3 · 5. b) ƯCLN(280, 30) = 2 · 5 = 10. BCNN(280, 30) = 2³ · 3 · 5 · 7 = 840."
+  },
+  {
+   "de": "Bài 3 (1,5 điểm). a) Lục giác đều có bao nhiêu trục đối xứng? Cho biết chu vi lục giác đều có cạnh 7 cm.   b) Hình vuông có chu vi 12 cm. Tính cạnh và diện tích.   c) Hình chữ nhật có diện tích 42 cm² và chiều rộng 6 cm. Tính chiều dài và chu vi.",
+   "giai": "a) Lục giác đều có 6 trục đối xứng; chu vi = 6 · 7 = 42 cm. b) Cạnh = 12 : 4 = 3 cm; S = 3 · 3 = 9 cm². c) Chiều dài = 42 : 6 = 7 cm; chu vi = 2 · (7 + 6) = 26 cm."
+  }
+ ]
+}

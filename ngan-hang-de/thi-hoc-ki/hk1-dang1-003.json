@@ -1,0 +1,153 @@
+{
+ "id": "hk1-dang1-003",
+ "loai": "thi",
+ "hoc_ki": 1,
+ "dang": "Dạng 1: 12 TN + 5 TL (Chương 1 – 5)",
+ "tieu_de": "Đề thi học kì 1 – Dạng 1 – Đề 3",
+ "thoi_gian": "90 phút",
+ "diem_moi_cau": 0.25,
+ "trac_nghiem": [
+  {
+   "q": "Viết 8² · 8⁵ dưới dạng một lũy thừa:",
+   "o": [
+    "64⁷",
+    "8⁸",
+    "8¹⁰",
+    "8⁷"
+   ],
+   "a": 3
+  },
+  {
+   "q": "Giá trị của 51 · 13 + 51 · 87 là:",
+   "o": [
+    "510",
+    "51000",
+    "5151",
+    "5100"
+   ],
+   "a": 3
+  },
+  {
+   "q": "Phân tích 60 ra thừa số nguyên tố được kết quả:",
+   "o": [
+    "2³ · 3 · 5",
+    "2² · 3 · 5",
+    "2² · 3",
+    "2² · 3 · 7"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Số nào sau đây là ước của 45?",
+   "o": [
+    "9",
+    "20",
+    "32",
+    "39"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Số nào sau đây là bội của 6?",
+   "o": [
+    "47",
+    "48",
+    "50",
+    "49"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Kết quả của (−2) + 11 là:",
+   "o": [
+    "13",
+    "−13",
+    "−9",
+    "9"
+   ],
+   "a": 3
+  },
+  {
+   "q": "Bỏ ngoặc rồi tính 39 − (13 − 9) ta được:",
+   "o": [
+    "43",
+    "61",
+    "35",
+    "17"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Hình nào sau đây có hai đường chéo bằng nhau?",
+   "o": [
+    "Hình bình hành",
+    "Hình thoi",
+    "Hình chữ nhật",
+    "Tam giác đều"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Hình thang cân có hai đáy 7 cm, 12 cm và chiều cao 6 cm. Diện tích là:",
+   "o": [
+    "57 cm²",
+    "114 cm²",
+    "42 cm²",
+    "25 cm²"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Hình thoi có hai đường chéo 20 cm và 12 cm. Diện tích hình thoi là:",
+   "o": [
+    "120 cm²",
+    "64 cm²",
+    "240 cm²",
+    "32 cm²"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Hình nào sau đây có tâm đối xứng?",
+   "o": [
+    "Hình chữ nhật",
+    "Tam giác đều",
+    "Chữ cái L",
+    "Hình thang cân"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Hình nào sau đây có đúng 2 trục đối xứng?",
+   "o": [
+    "Hình tròn",
+    "Tam giác đều",
+    "Hình chữ nhật (không phải hình vuông)",
+    "Hình vuông"
+   ],
+   "a": 2
+  }
+ ],
+ "tu_luan": [
+  {
+   "de": "Bài 1 (1,5 điểm). Tính (tính hợp lý nếu có thể): a) 2³ · 6 − 54 : 3²   b) (−17) + 25 − (−9)   c) 32 + 81 + 68 + 19",
+   "giai": "a) = 8 · 6 − 54 : 9 = 48 − 6 = 42. b) = 8 + 9 = 17. c) = (32 + 68) + (19 + 81) = 100 + 100 = 200."
+  },
+  {
+   "de": "Bài 2 (1 điểm). Tìm x: a) 3(x − 9) = 9   b) x ∈ B(8) và 15 ≤ x ≤ 39",
+   "giai": "a) x − 9 = 9 : 3 = 3 nên x = 3 + 9 = 12. b) Các bội của 8 từ 15 đến 39 là 16; 24; 32, vậy x ∈ {16; 24; 32}."
+  },
+  {
+   "de": "Bài 3 (1,5 điểm). a) Phân tích 35 và 45 ra thừa số nguyên tố.   b) Tìm ƯCLN(35, 45) và BCNN(35, 45).",
+   "giai": "a) 35 = 5 · 7; 45 = 3² · 5. b) ƯCLN(35, 45) = 5. BCNN(35, 45) = 3² · 5 · 7 = 315."
+  },
+  {
+   "de": "Bài 4 (1,5 điểm). Cô giáo có 45 cái bánh và 18 cái kẹo, muốn chia vào các hộp quà sao cho số bánh mỗi hộp bằng nhau và số kẹo mỗi hộp cũng bằng nhau. Chia được nhiều nhất bao nhiêu hộp? Mỗi hộp có bao nhiêu bánh, bao nhiêu kẹo?",
+   "giai": "ƯCLN(45, 18) = 9 nên chia nhiều nhất 9 hộp; mỗi hộp có 5 bánh và 2 kẹo."
+  },
+  {
+   "de": "Bài 5 (1,5 điểm). a) Hình thang cân có hai đáy 10 m và 19 m, chiều cao 4 m. Tính diện tích.   b) Hình bình hành có cạnh đáy 15 cm, chiều cao 8 cm. Tính diện tích.   c) Hình chữ nhật có diện tích 55 cm² và chiều rộng 5 cm. Tính chiều dài và chu vi.",
+   "giai": "a) S = (10 + 19) · 4 : 2 = 58 m². b) S = 15 · 8 = 120 cm². c) Chiều dài = 55 : 5 = 11 cm; chu vi = 2 · (11 + 5) = 32 cm."
+  }
+ ]
+}

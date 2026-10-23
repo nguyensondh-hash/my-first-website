@@ -1,0 +1,109 @@
+{
+ "id": "hk1-dang2-002",
+ "loai": "kt45",
+ "hoc_ki": 1,
+ "dang": "Dạng 2: Trọng tâm Tính chia hết (8 TN + 4 TL)",
+ "tieu_de": "Kiểm tra 45 phút học kì 1 – Dạng 2 – Đề 2",
+ "thoi_gian": "45 phút",
+ "diem_moi_cau": 0.5,
+ "trac_nghiem": [
+  {
+   "q": "Số nào sau đây là bội của 5?",
+   "o": [
+    "59",
+    "61",
+    "62",
+    "60"
+   ],
+   "a": 3
+  },
+  {
+   "q": "ƯCLN(6, 10) là:",
+   "o": [
+    "4",
+    "3",
+    "30",
+    "2"
+   ],
+   "a": 3
+  },
+  {
+   "q": "Số nào sau đây là ước của 18?",
+   "o": [
+    "17",
+    "9",
+    "16",
+    "7"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Số nào sau đây là hợp số?",
+   "o": [
+    "31",
+    "17",
+    "47",
+    "33"
+   ],
+   "a": 3
+  },
+  {
+   "q": "Số nào sau đây chia hết cho 2?",
+   "o": [
+    "2 609",
+    "232",
+    "5 503",
+    "3 369"
+   ],
+   "a": 1
+  },
+  {
+   "q": "BCNN(11, 12) là:",
+   "o": [
+    "132",
+    "264",
+    "1",
+    "143"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Phân tích 84 ra thừa số nguyên tố được kết quả:",
+   "o": [
+    "2² · 3 · 11",
+    "2³ · 3 · 7",
+    "2² · 3 · 7",
+    "2² · 3"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Số nào sau đây là số nguyên tố?",
+   "o": [
+    "23",
+    "55",
+    "57",
+    "77"
+   ],
+   "a": 0
+  }
+ ],
+ "tu_luan": [
+  {
+   "de": "Bài 1 (2 điểm). a) Phân tích 30 và 140 ra thừa số nguyên tố.   b) Tìm ƯCLN(30, 140) và BCNN(30, 140).",
+   "giai": "a) 30 = 2 · 3 · 5; 140 = 2² · 5 · 7. b) ƯCLN(30, 140) = 2 · 5 = 10. BCNN(30, 140) = 2² · 3 · 5 · 7 = 420."
+  },
+  {
+   "de": "Bài 2 (2 điểm). Lớp 6A có 40 học sinh nam và 45 học sinh nữ. Cô giáo muốn chia lớp thành các nhóm sao cho số nam mỗi nhóm bằng nhau, số nữ mỗi nhóm cũng bằng nhau (mỗi bạn vào đúng một nhóm). Chia được nhiều nhất bao nhiêu nhóm? Khi đó mỗi nhóm có bao nhiêu nam, bao nhiêu nữ?",
+   "giai": "Số nhóm là ước chung của 40 và 45; nhiều nhất thì lấy ƯCLN(40, 45) = 5. Vậy chia nhiều nhất 5 nhóm; mỗi nhóm có 8 nam và 9 nữ."
+  },
+  {
+   "de": "Bài 3 (1 điểm). Tìm x: a) 2ˣ = 64   b) (x + 3) : 6 = 8",
+   "giai": "a) 64 = 2⁶ nên x = 6. b) x + 3 = 6 · 8 = 48 nên x = 45."
+  },
+  {
+   "de": "Bài 4 (1 điểm). Tính (tính hợp lý nếu có thể): a) (−23) + 39 − (−14)   b) 3² · 5 − 16 : 2²   c) 50 · 55 + 50 · 45",
+   "giai": "a) = 16 + 14 = 30. b) = 9 · 5 − 16 : 4 = 45 − 4 = 41. c) = 50 · (55 + 45) = 50 · 100 = 5 000."
+  }
+ ]
+}

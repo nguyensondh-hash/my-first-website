@@ -1,0 +1,36 @@
+{
+ "id": "hk2-dang3-003",
+ "loai": "thi",
+ "hoc_ki": 2,
+ "dang": "Dạng 3: 6 bài tự luận (Chương 6 – 9)",
+ "tieu_de": "Đề thi học kì 2 – Dạng 3 – Đề 3",
+ "thoi_gian": "90 phút",
+ "diem_moi_cau": 0.25,
+ "trac_nghiem": [],
+ "tu_luan": [
+  {
+   "de": "Bài 1 (2 điểm). Tính: a) 1 2/9 · 7/4   b) 3/4 + 1/6 − 2/3   c) 2/4 : 4/5 + 3/8",
+   "giai": "a) = 11/9 · 7/4 = 77/36. b) MSC = 12: 9/12 + 2/12 − 8/12 = 3/12 = 1/4. c) = 2/4 · 5/4 + 3/8 = 5/8 + 3/8 = 1."
+  },
+  {
+   "de": "Bài 2 (1,5 điểm). Tìm x: a) 2,5 · x = 45   b) x + 1/3 = 1/2",
+   "giai": "a) x = 45 : 2,5 = 18. b) x = 1/2 − 1/3 = 1/6."
+  },
+  {
+   "de": "Bài 3 (1,5 điểm). Lớp 6A có 80 học sinh: số học sinh giỏi chiếm 25%, số học sinh khá bằng 1/5 số học sinh cả lớp, còn lại là học sinh trung bình. Tính số học sinh mỗi loại.",
+   "giai": "Giỏi: 80 · 25 : 100 = 20. Khá: 80 : 5 · 1 = 16. Trung bình: 80 − 20 − 16 = 44 học sinh."
+  },
+  {
+   "de": "Bài 4 (1,5 điểm). Lớp có 20 học sinh, trong đó có 3 học sinh nữ. Tính tỉ số phần trăm số học sinh nữ so với cả lớp.",
+   "giai": "Tỉ số phần trăm = 3 : 20 · 100% = 15%."
+  },
+  {
+   "de": "Bài 5 (1,5 điểm). Trên tia Ox lấy hai điểm A, B sao cho OA = 2 cm, OB = 12 cm. a) Điểm A có nằm giữa O và B không? Vì sao?   b) Tính độ dài AB.   c) Gọi M là trung điểm của AB. Tính AM.",
+   "giai": "a) Có, vì A và B cùng thuộc tia Ox và OA < OB (2 < 12). b) A nằm giữa O và B nên OA + AB = OB, suy ra AB = 12 − 2 = 10 cm. c) M là trung điểm AB nên AM = 10 : 2 = 5 cm."
+  },
+  {
+   "de": "Bài 6 (2 điểm). a) Tung một đồng xu 28 lần, mặt sấp xuất hiện 20 lần. Tính xác suất thực nghiệm của mặt sấp và mặt ngửa.   b) Điểm kiểm tra của 10 bạn: 10; 7; 8; 9; 5; 6; 8; 9; 9; 5. Có bao nhiêu bạn đạt từ 8 điểm trở lên? Chiếm bao nhiêu phần trăm?",
+   "giai": "a) Mặt sấp: 20/28 = 5/7; mặt ngửa: 8/28 = 2/7. b) Có 6 bạn đạt từ 8 điểm trở lên, chiếm 6/10 = 60%."
+  }
+ ]
+}

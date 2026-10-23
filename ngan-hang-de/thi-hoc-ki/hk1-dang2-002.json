@@ -1,0 +1,225 @@
+{
+ "id": "hk1-dang2-002",
+ "loai": "thi",
+ "hoc_ki": 1,
+ "dang": "Dạng 2: 20 TN + 3 TL (Chương 1 – 5)",
+ "tieu_de": "Đề thi học kì 1 – Dạng 2 – Đề 2",
+ "thoi_gian": "90 phút",
+ "diem_moi_cau": 0.25,
+ "trac_nghiem": [
+  {
+   "q": "Cho tập hợp A gồm các số tự nhiên nhỏ hơn 6. Số phần tử của A là:",
+   "o": [
+    "8",
+    "6",
+    "5",
+    "7"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Giá trị của biểu thức 2 + 3 · 2² là:",
+   "o": [
+    "20",
+    "77",
+    "9",
+    "14"
+   ],
+   "a": 3
+  },
+  {
+   "q": "Số La Mã XV có giá trị là:",
+   "o": [
+    "16",
+    "14",
+    "25",
+    "15"
+   ],
+   "a": 3
+  },
+  {
+   "q": "Số dư của phép chia 53 cho 4 là:",
+   "o": [
+    "1",
+    "13",
+    "3",
+    "2"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Số nào sau đây là hợp số?",
+   "o": [
+    "13",
+    "17",
+    "77",
+    "43"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Số nào sau đây là ước của 40?",
+   "o": [
+    "9",
+    "26",
+    "2",
+    "34"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Số nào sau đây là bội của 4?",
+   "o": [
+    "20",
+    "19",
+    "21",
+    "22"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Số nào sau đây là số nguyên tố?",
+   "o": [
+    "77",
+    "33",
+    "23",
+    "21"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Phân tích 72 ra thừa số nguyên tố được kết quả:",
+   "o": [
+    "2³ · 3²",
+    "2³ · 3",
+    "2³ · 5²",
+    "2⁴ · 3²"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Giá trị tuyệt đối của −13 là:",
+   "o": [
+    "14",
+    "0",
+    "−13",
+    "13"
+   ],
+   "a": 3
+  },
+  {
+   "q": "Số đối của −24 là:",
+   "o": [
+    "−24",
+    "25",
+    "0",
+    "24"
+   ],
+   "a": 3
+  },
+  {
+   "q": "Trong các số 6; 9; −7; −3, số nhỏ nhất là:",
+   "o": [
+    "6",
+    "9",
+    "−3",
+    "−7"
+   ],
+   "a": 3
+  },
+  {
+   "q": "Kết quả của 1 · 8 là:",
+   "o": [
+    "−8",
+    "8",
+    "9",
+    "−7"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Lục giác đều có tất cả các cạnh và các góc:",
+   "o": [
+    "chỉ có các góc bằng nhau",
+    "bằng nhau",
+    "khác nhau",
+    "chỉ có các cạnh bằng nhau"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Hình chữ nhật dài 20 cm, rộng 7 cm. Chu vi hình chữ nhật là:",
+   "o": [
+    "140 cm",
+    "54 cm",
+    "27 cm",
+    "280 cm"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Hình có hai cạnh đáy song song và hai cạnh bên bằng nhau (không song song) là:",
+   "o": [
+    "Hình thang cân",
+    "Hình chữ nhật",
+    "Hình thoi",
+    "Hình bình hành"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Hình có bốn cạnh bằng nhau và bốn góc vuông là:",
+   "o": [
+    "Hình vuông",
+    "Hình bình hành",
+    "Hình thoi",
+    "Hình chữ nhật"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Hình nào sau đây không có tâm đối xứng?",
+   "o": [
+    "Hình thoi",
+    "Hình chữ nhật",
+    "Tam giác đều",
+    "Hình vuông"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Hình vuông có bao nhiêu trục đối xứng?",
+   "o": [
+    "4",
+    "2",
+    "3",
+    "1"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Hình nào sau đây có tâm đối xứng?",
+   "o": [
+    "Hình chữ nhật",
+    "Chữ cái L",
+    "Hình thang cân",
+    "Tam giác đều"
+   ],
+   "a": 0
+  }
+ ],
+ "tu_luan": [
+  {
+   "de": "Bài 1 (2 điểm). Tính (tính hợp lý nếu có thể): a) 3³ · 4 − 63 : 3²   b) 65 · 66 + 65 · 34   c) (−18) + 20 − (−15)",
+   "giai": "a) = 27 · 4 − 63 : 9 = 108 − 7 = 101. b) = 65 · (66 + 34) = 65 · 100 = 6 500. c) = 2 + 15 = 17."
+  },
+  {
+   "de": "Bài 2 (1,5 điểm). a) Phân tích 60 và 140 ra thừa số nguyên tố.   b) Tìm ƯCLN(60, 140) và BCNN(60, 140).",
+   "giai": "a) 60 = 2² · 3 · 5; 140 = 2² · 5 · 7. b) ƯCLN(60, 140) = 2² · 5 = 20. BCNN(60, 140) = 2² · 3 · 5 · 7 = 420."
+  },
+  {
+   "de": "Bài 3 (1,5 điểm). a) Hình bình hành có cạnh đáy 10 cm, chiều cao 7 cm. Tính diện tích.   b) Lục giác đều có bao nhiêu trục đối xứng? Cho biết chu vi lục giác đều có cạnh 7 cm.   c) Mảnh vườn hình chữ nhật dài 29 m, rộng 8 m. Tính chu vi và diện tích.",
+   "giai": "a) S = 10 · 7 = 70 cm². b) Lục giác đều có 6 trục đối xứng; chu vi = 6 · 7 = 42 cm. c) P = 2 · (29 + 8) = 74 m; S = 29 · 8 = 232 m²."
+  }
+ ]
+}

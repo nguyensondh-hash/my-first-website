@@ -1,0 +1,36 @@
+{
+ "id": "hk1-dang3-002",
+ "loai": "thi",
+ "hoc_ki": 1,
+ "dang": "Dạng 3: 6 bài tự luận (Chương 1 – 5)",
+ "tieu_de": "Đề thi học kì 1 – Dạng 3 – Đề 2",
+ "thoi_gian": "90 phút",
+ "diem_moi_cau": 0.25,
+ "trac_nghiem": [],
+ "tu_luan": [
+  {
+   "de": "Bài 1 (2 điểm). Tính (tính hợp lý nếu có thể): a) 78 + 68 + 32 + 22   b) 2² · 3 − 36 : 3²   c) 18 · 89 + 18 · 11",
+   "giai": "a) = (32 + 68) + (78 + 22) = 100 + 100 = 200. b) = 4 · 3 − 36 : 9 = 12 − 4 = 8. c) = 18 · (89 + 11) = 18 · 100 = 1 800."
+  },
+  {
+   "de": "Bài 2 (1,5 điểm). Tìm x: a) 3ˣ = 27   b) x ∈ Ư(24) và x > 8",
+   "giai": "a) 27 = 3³ nên x = 3. b) Ư(24) = {1; 2; 3; 4; 6; 8; 12; 24}. Các ước lớn hơn 8 là 12; 24, vậy x ∈ {12; 24}."
+  },
+  {
+   "de": "Bài 3 (2 điểm). a) Phân tích 40 và 90 ra thừa số nguyên tố.   b) Tìm ƯCLN(40, 90) và BCNN(40, 90).",
+   "giai": "a) 40 = 2³ · 5; 90 = 2 · 3² · 5. b) ƯCLN(40, 90) = 2 · 5 = 10. BCNN(40, 90) = 2³ · 3² · 5 = 360."
+  },
+  {
+   "de": "Bài 4 (1,5 điểm). Cô giáo có 54 cái bánh và 72 cái kẹo, muốn chia vào các hộp quà sao cho số bánh mỗi hộp bằng nhau và số kẹo mỗi hộp cũng bằng nhau. Chia được nhiều nhất bao nhiêu hộp? Mỗi hộp có bao nhiêu bánh, bao nhiêu kẹo?",
+   "giai": "ƯCLN(54, 72) = 18 nên chia nhiều nhất 18 hộp; mỗi hộp có 3 bánh và 4 kẹo."
+  },
+  {
+   "de": "Bài 5 (1,5 điểm). a) Sắp xếp theo thứ tự tăng dần: 11; 0; 8; 14; −15.   b) Tính 21 − (13 − 6).   c) Tính (−9) · (−4) + 12 : (−4).",
+   "giai": "a) −15 < 0 < 8 < 11 < 14. b) 21 − 13 + 6 = 14. c) 36 + (−3) = 33."
+  },
+  {
+   "de": "Bài 6 (1,5 điểm). a) Hình chữ nhật (không phải hình vuông) và hình vuông, mỗi hình có mấy trục đối xứng?   b) Hình thoi có hai đường chéo 10 cm và 7 cm. Tính diện tích.   c) Hình bình hành có cạnh đáy 8 cm, chiều cao 8 cm. Tính diện tích.",
+   "giai": "a) Hình chữ nhật có 2 trục đối xứng; hình vuông có 4 trục đối xứng. b) S = 10 · 7 : 2 = 35 cm². c) S = 8 · 8 = 64 cm²."
+  }
+ ]
+}

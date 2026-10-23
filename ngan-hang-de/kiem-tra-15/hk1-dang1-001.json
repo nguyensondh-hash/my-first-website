@@ -1,0 +1,85 @@
+{
+ "id": "hk1-dang1-001",
+ "loai": "kt15",
+ "hoc_ki": 1,
+ "dang": "Dạng 1: 6 trắc nghiệm + 3 tự luận (Chương 1)",
+ "tieu_de": "Kiểm tra 15 phút học kì 1 – Dạng 1 – Đề 1",
+ "thoi_gian": "15 phút",
+ "diem_moi_cau": 0.5,
+ "trac_nghiem": [
+  {
+   "q": "Kết quả của 5⁶ : 5⁴ viết dưới dạng lũy thừa là:",
+   "o": [
+    "5³",
+    "5²⁴",
+    "5²",
+    "5¹⁰"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Giá trị của 2² là:",
+   "o": [
+    "8",
+    "6",
+    "4",
+    "64"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Cho tập hợp A gồm các số tự nhiên nhỏ hơn 6. Số phần tử của A là:",
+   "o": [
+    "7",
+    "6",
+    "8",
+    "5"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Viết 9⁴ · 9³ dưới dạng một lũy thừa:",
+   "o": [
+    "81⁷",
+    "9⁸",
+    "9¹²",
+    "9⁷"
+   ],
+   "a": 3
+  },
+  {
+   "q": "Số dư của phép chia 130 cho 8 là:",
+   "o": [
+    "2",
+    "16",
+    "3",
+    "6"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Giá trị của 43 · 87 + 43 · 13 là:",
+   "o": [
+    "4300",
+    "4343",
+    "43000",
+    "430"
+   ],
+   "a": 0
+  }
+ ],
+ "tu_luan": [
+  {
+   "de": "Bài 1 (3 điểm). Tính (tính hợp lý nếu có thể): a) 51 + 72 + 28 + 49   b) 3³ · 5 − 8 : 2²   c) 24 · 31 + 24 · 69",
+   "giai": "a) = (51 + 49) + (28 + 72) = 100 + 100 = 200. b) = 27 · 5 − 8 : 4 = 135 − 2 = 133. c) = 24 · (31 + 69) = 24 · 100 = 2 400."
+  },
+  {
+   "de": "Bài 2 (2 điểm). Tìm x: a) (x + 7) : 2 = 10   b) x ∈ Ư(24) và x > 3",
+   "giai": "a) x + 7 = 2 · 10 = 20 nên x = 13. b) Ư(24) = {1; 2; 3; 4; 6; 8; 12; 24}. Các ước lớn hơn 3 là 4; 6; 8; 12; 24, vậy x ∈ {4; 6; 8; 12; 24}."
+  },
+  {
+   "de": "Bài 3 (2 điểm). a) Chia 122 cho 5, tìm thương và số dư rồi viết dưới dạng a = b · q + r.   b) Số 355 có chia hết cho 3 không? Có chia hết cho 9 không? Vì sao?",
+   "giai": "a) 122 : 5 được thương 24, dư 2. Vậy 122 = 5 · 24 + 2. b) Tổng các chữ số của 355 là 13; không chia hết cho 3 và không chia hết cho 9 nên 355 không chia hết cho 3, không chia hết cho 9."
+  }
+ ]
+}

@@ -1,0 +1,153 @@
+{
+ "id": "hk2-dang1-002",
+ "loai": "thi",
+ "hoc_ki": 2,
+ "dang": "Dạng 1: 12 TN + 5 TL (Chương 6 – 9)",
+ "tieu_de": "Đề thi học kì 2 – Dạng 1 – Đề 2",
+ "thoi_gian": "90 phút",
+ "diem_moi_cau": 0.25,
+ "trac_nghiem": [
+  {
+   "q": "Rút gọn phân số 35/50 đến tối giản ta được:",
+   "o": [
+    "7/10",
+    "4/5",
+    "7/11",
+    "10/7"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Kết quả của 7/2 · 1/6 là:",
+   "o": [
+    "7/12",
+    "21",
+    "7/8",
+    "1"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Phân số nào sau đây bằng 2/3?",
+   "o": [
+    "1/6",
+    "8/3",
+    "8/12",
+    "6/7"
+   ],
+   "a": 2
+  },
+  {
+   "q": "1/6 của 48 là:",
+   "o": [
+    "47",
+    "48",
+    "49",
+    "8"
+   ],
+   "a": 3
+  },
+  {
+   "q": "Kết quả của 2,3 + 2,62 là:",
+   "o": [
+    "0,492",
+    "4,92",
+    "49,2",
+    "5,92"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Tỉ số phần trăm của 60 và 120 là:",
+   "o": [
+    "120%",
+    "50%",
+    "77%",
+    "60%"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Kết quả của 5,3 · 9,5 là:",
+   "o": [
+    "14,8",
+    "50,35",
+    "503,5",
+    "5,035"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Điểm M là trung điểm của đoạn thẳng AB khi:",
+   "o": [
+    "chỉ cần M nằm giữa A và B",
+    "AM + MB = 2AB",
+    "chỉ cần MA = MB",
+    "M nằm giữa A, B và MA = MB"
+   ],
+   "a": 3
+  },
+  {
+   "q": "Tia Oy nằm giữa hai tia Ox và Oz, góc xOy = 18°, góc yOz = 85°. Số đo góc xOz là:",
+   "o": [
+    "113°",
+    "103°",
+    "77°",
+    "67°"
+   ],
+   "a": 1
+  },
+  {
+   "q": "M là trung điểm của đoạn thẳng AB, AB = 8 cm. Độ dài AM là:",
+   "o": [
+    "8 cm",
+    "16 cm",
+    "5 cm",
+    "4 cm"
+   ],
+   "a": 3
+  },
+  {
+   "q": "Gieo một đồng xu 57 lần, mặt sấp xuất hiện 42 lần. Xác suất thực nghiệm của mặt sấp là:",
+   "o": [
+    "14/5",
+    "19/14",
+    "14/19",
+    "5/19"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Cho dãy điểm: 6; 7; 7; 5; 6; 10; 6; 8; 10. Điểm xuất hiện nhiều nhất là:",
+   "o": [
+    "7",
+    "10",
+    "6",
+    "5"
+   ],
+   "a": 2
+  }
+ ],
+ "tu_luan": [
+  {
+   "de": "Bài 1 (1,5 điểm). Tính: a) 3 7/9 · 1/6   b) 1/3 + 1/2 − 3/4   c) 2/9 : 6/6 + 4/2",
+   "giai": "a) = 34/9 · 1/6 = 34/54 = 17/27. b) MSC = 12: 4/12 + 6/12 − 9/12 = 1/12. c) = 2/9 · 6/6 + 4/2 = 2/9 + 4/2 = 20/9."
+  },
+  {
+   "de": "Bài 2 (1 điểm). Tìm x: a) x + 1/4 = 5/12   b) 1/3 · x = 3/7",
+   "giai": "a) x = 5/12 − 1/4 = 1/6. b) x = 3/7 : 1/3 = 3/7 · 3/1 = 9/7."
+  },
+  {
+   "de": "Bài 3 (1,5 điểm). Một chiếc áo có giá 280 000 đồng được giảm giá 30%. Tính số tiền được giảm và giá bán sau khi giảm.",
+   "giai": "Số tiền giảm: 280 000 · 30 : 100 = 84 000 đồng. Giá sau giảm: 280 000 − 84 000 = 196 000 đồng."
+  },
+  {
+   "de": "Bài 4 (1,5 điểm). a) Cho tia Oy nằm giữa hai tia Ox và Oz, góc xOy = 47°, góc yOz = 46°. Tính góc xOz và cho biết đó là góc gì.   b) Cho góc xOz = 145° và góc xOy = 47° (Oy nằm giữa Ox và Oz). Tính góc yOz.",
+   "giai": "a) xOz = 47° + 46° = 93°, đó là góc tù. b) yOz = 145° − 47° = 98°."
+  },
+  {
+   "de": "Bài 5 (1,5 điểm). a) Tung một đồng xu 50 lần, mặt sấp xuất hiện 26 lần. Tính xác suất thực nghiệm của mặt sấp và mặt ngửa.   b) Điểm kiểm tra của 10 bạn: 10; 5; 7; 5; 6; 9; 6; 8; 10; 9. Có bao nhiêu bạn đạt từ 8 điểm trở lên? Chiếm bao nhiêu phần trăm?",
+   "giai": "a) Mặt sấp: 26/50 = 13/25; mặt ngửa: 24/50 = 12/25. b) Có 5 bạn đạt từ 8 điểm trở lên, chiếm 5/10 = 50%."
+  }
+ ]
+}
