@@ -1,0 +1,225 @@
+{
+ "id": "hk1-dang2-001",
+ "loai": "thi",
+ "hoc_ki": 1,
+ "dang": "Dạng 2: 20 TN + 3 TL (Chương 1 – 5)",
+ "tieu_de": "Đề thi học kì 1 – Dạng 2 – Đề 1",
+ "thoi_gian": "90 phút",
+ "diem_moi_cau": 0.25,
+ "trac_nghiem": [
+  {
+   "q": "Cho tập hợp A gồm các số tự nhiên nhỏ hơn 6. Số phần tử của A là:",
+   "o": [
+    "8",
+    "5",
+    "6",
+    "7"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Giá trị của 6³ là:",
+   "o": [
+    "18",
+    "216",
+    "222",
+    "9"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Số La Mã XXVI có giá trị là:",
+   "o": [
+    "27",
+    "25",
+    "26",
+    "36"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Giá trị của biểu thức 8 + 2 · 3² là:",
+   "o": [
+    "20",
+    "90",
+    "19",
+    "26"
+   ],
+   "a": 3
+  },
+  {
+   "q": "ƯCLN(18, 36) là:",
+   "o": [
+    "18",
+    "36",
+    "25",
+    "19"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Số nào sau đây là hợp số?",
+   "o": [
+    "63",
+    "23",
+    "29",
+    "41"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Số nào sau đây là ước của 30?",
+   "o": [
+    "19",
+    "17",
+    "26",
+    "3"
+   ],
+   "a": 3
+  },
+  {
+   "q": "Số nào sau đây là số nguyên tố?",
+   "o": [
+    "21",
+    "19",
+    "63",
+    "39"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Phân tích 36 ra thừa số nguyên tố được kết quả:",
+   "o": [
+    "2³ · 3²",
+    "2² · 5²",
+    "2² · 3",
+    "2² · 3²"
+   ],
+   "a": 3
+  },
+  {
+   "q": "Kết quả của 13 + (−12) là:",
+   "o": [
+    "1",
+    "25",
+    "−25",
+    "−1"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Bỏ ngoặc rồi tính 13 − (15 − 9) ta được:",
+   "o": [
+    "−11",
+    "19",
+    "7",
+    "37"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Trong các số 6; 9; 15; 4, số nhỏ nhất là:",
+   "o": [
+    "15",
+    "4",
+    "6",
+    "9"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Số đối của 3 là:",
+   "o": [
+    "4",
+    "−3",
+    "3",
+    "0"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Hình nào sau đây có hai đường chéo bằng nhau?",
+   "o": [
+    "Hình bình hành",
+    "Hình chữ nhật",
+    "Hình thoi",
+    "Tam giác đều"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Hình có bốn cạnh bằng nhau và bốn góc vuông là:",
+   "o": [
+    "Hình chữ nhật",
+    "Hình thoi",
+    "Hình bình hành",
+    "Hình vuông"
+   ],
+   "a": 3
+  },
+  {
+   "q": "Hình có hai cạnh đáy song song và hai cạnh bên bằng nhau (không song song) là:",
+   "o": [
+    "Hình thoi",
+    "Hình bình hành",
+    "Hình chữ nhật",
+    "Hình thang cân"
+   ],
+   "a": 3
+  },
+  {
+   "q": "Hình thang cân có hai đáy 11 cm, 21 cm và chiều cao 8 cm. Diện tích là:",
+   "o": [
+    "256 cm²",
+    "40 cm²",
+    "88 cm²",
+    "128 cm²"
+   ],
+   "a": 3
+  },
+  {
+   "q": "Hình nào sau đây có đúng 2 trục đối xứng?",
+   "o": [
+    "Hình vuông",
+    "Tam giác đều",
+    "Hình chữ nhật (không phải hình vuông)",
+    "Hình tròn"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Hình nào sau đây không có tâm đối xứng?",
+   "o": [
+    "Tam giác đều",
+    "Hình thoi",
+    "Hình vuông",
+    "Hình chữ nhật"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Tam giác đều có bao nhiêu trục đối xứng?",
+   "o": [
+    "6",
+    "1",
+    "3",
+    "2"
+   ],
+   "a": 2
+  }
+ ],
+ "tu_luan": [
+  {
+   "de": "Bài 1 (2 điểm). Tính (tính hợp lý nếu có thể): a) 30 + 26 + 74 + 70   b) 13 · 87 + 13 · 13   c) 3³ · 5 − 72 : 3²",
+   "giai": "a) = (74 + 26) + (70 + 30) = 100 + 100 = 200. b) = 13 · (87 + 13) = 13 · 100 = 1 300. c) = 27 · 5 − 72 : 9 = 135 − 8 = 127."
+  },
+  {
+   "de": "Bài 2 (1,5 điểm). a) Phân tích 40 và 280 ra thừa số nguyên tố.   b) Tìm ƯCLN(40, 280) và BCNN(40, 280).",
+   "giai": "a) 40 = 2³ · 5; 280 = 2³ · 5 · 7. b) ƯCLN(40, 280) = 2³ · 5 = 40. BCNN(40, 280) = 2³ · 5 · 7 = 280."
+  },
+  {
+   "de": "Bài 3 (1,5 điểm). a) Hình chữ nhật có diện tích 48 cm² và chiều rộng 4 cm. Tính chiều dài và chu vi.   b) Hình bình hành có cạnh đáy 18 cm, chiều cao 4 cm. Tính diện tích.   c) Hình chữ nhật (không phải hình vuông) và hình vuông, mỗi hình có mấy trục đối xứng?",
+   "giai": "a) Chiều dài = 48 : 4 = 12 cm; chu vi = 2 · (12 + 4) = 32 cm. b) S = 18 · 4 = 72 cm². c) Hình chữ nhật có 2 trục đối xứng; hình vuông có 4 trục đối xứng."
+  }
+ ]
+}

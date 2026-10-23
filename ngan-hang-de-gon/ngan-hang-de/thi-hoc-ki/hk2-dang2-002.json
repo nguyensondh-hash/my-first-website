@@ -1,0 +1,225 @@
+{
+ "id": "hk2-dang2-002",
+ "loai": "thi",
+ "hoc_ki": 2,
+ "dang": "Dạng 2: 20 TN + 3 TL (Chương 6 – 9)",
+ "tieu_de": "Đề thi học kì 2 – Dạng 2 – Đề 2",
+ "thoi_gian": "90 phút",
+ "diem_moi_cau": 0.25,
+ "trac_nghiem": [
+  {
+   "q": "So sánh 3/9 và 1/8:",
+   "o": [
+    "3/9 = 1/8",
+    "Không so sánh được",
+    "3/9 > 1/8",
+    "3/9 < 1/8"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Kết quả của 6/3 : 7/9 là:",
+   "o": [
+    "2",
+    "7/18",
+    "14/9",
+    "18/7"
+   ],
+   "a": 3
+  },
+  {
+   "q": "Hỗn số 4 4/7 viết thành phân số là:",
+   "o": [
+    "4",
+    "8/7",
+    "32/7",
+    "23/7"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Kết quả của 2/9 + 4/9 là:",
+   "o": [
+    "1/3",
+    "2/3",
+    "2/27",
+    "8/81"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Rút gọn phân số 4/32 đến tối giản ta được:",
+   "o": [
+    "8",
+    "1/9",
+    "1/4",
+    "1/8"
+   ],
+   "a": 3
+  },
+  {
+   "q": "Phân số nào sau đây bằng 5/8?",
+   "o": [
+    "15/24",
+    "8/11",
+    "15/8",
+    "5/24"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Kết quả của 4 : 0,2 là:",
+   "o": [
+    "2",
+    "22",
+    "200",
+    "20"
+   ],
+   "a": 3
+  },
+  {
+   "q": "Làm tròn 72,795 đến hàng phần mười ta được:",
+   "o": [
+    "73",
+    "72,9",
+    "72,7",
+    "72,8"
+   ],
+   "a": 3
+  },
+  {
+   "q": "25% của 220 bằng:",
+   "o": [
+    "245",
+    "88",
+    "5500",
+    "55"
+   ],
+   "a": 3
+  },
+  {
+   "q": "Kết quả của 8,9 · 4 là:",
+   "o": [
+    "35,6",
+    "12,9",
+    "3,56",
+    "356"
+   ],
+   "a": 0
+  },
+  {
+   "q": "Tỉ số phần trăm của 75 và 100 là:",
+   "o": [
+    "100%",
+    "25%",
+    "75%",
+    "85%"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Điểm M là trung điểm của đoạn thẳng AB khi:",
+   "o": [
+    "chỉ cần M nằm giữa A và B",
+    "M nằm giữa A, B và MA = MB",
+    "chỉ cần MA = MB",
+    "AM + MB = 2AB"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Tia Oy nằm giữa hai tia Ox và Oz, góc xOy = 53°, góc yOz = 72°. Số đo góc xOz là:",
+   "o": [
+    "55°",
+    "125°",
+    "135°",
+    "19°"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Nếu điểm M nằm giữa hai điểm A và B thì:",
+   "o": [
+    "AB = 2AM",
+    "AM − MB = AB",
+    "AM + MB = AB",
+    "AM = MB"
+   ],
+   "a": 2
+  },
+  {
+   "q": "M là trung điểm của đoạn thẳng AB, AB = 16 cm. Độ dài AM là:",
+   "o": [
+    "16 cm",
+    "8 cm",
+    "32 cm",
+    "9 cm"
+   ],
+   "a": 1
+  },
+  {
+   "q": "Góc có số đo 180° là góc:",
+   "o": [
+    "nhọn",
+    "tù",
+    "vuông",
+    "bẹt"
+   ],
+   "a": 3
+  },
+  {
+   "q": "Cho dãy điểm: 6; 8; 8; 9; 7; 5; 8; 5; 6. Điểm xuất hiện nhiều nhất là:",
+   "o": [
+    "10",
+    "7",
+    "6",
+    "8"
+   ],
+   "a": 3
+  },
+  {
+   "q": "Món ăn yêu thích của học sinh là:",
+   "o": [
+    "Chỉ là hình ảnh",
+    "Dữ liệu định lượng",
+    "Dữ liệu định tính",
+    "Không phải dữ liệu"
+   ],
+   "a": 2
+  },
+  {
+   "q": "Gieo một đồng xu 44 lần, mặt sấp xuất hiện 41 lần. Xác suất thực nghiệm của mặt sấp là:",
+   "o": [
+    "3/44",
+    "41/3",
+    "44/41",
+    "41/44"
+   ],
+   "a": 3
+  },
+  {
+   "q": "Loại biểu đồ nào dùng các cột có chiều cao khác nhau để biểu diễn số liệu?",
+   "o": [
+    "Biểu đồ cột",
+    "Số La Mã",
+    "Trục số",
+    "Bảng nhân"
+   ],
+   "a": 0
+  }
+ ],
+ "tu_luan": [
+  {
+   "de": "Bài 1 (2 điểm). Tính: a) 4 7/8 · 6/7   b) 3/8 + 1/3 − 1/8   c) 7/6 : 1/7 + 5/2",
+   "giai": "a) = 39/8 · 6/7 = 234/56 = 117/28. b) MSC = 24: 9/24 + 8/24 − 3/24 = 14/24 = 7/12. c) = 7/6 · 7/1 + 5/2 = 49/6 + 5/2 = 32/3."
+  },
+  {
+   "de": "Bài 2 (1,5 điểm). Trên tia Ox lấy hai điểm A, B sao cho OA = 6 cm, OB = 14 cm. a) Điểm A có nằm giữa O và B không? Vì sao?   b) Tính độ dài AB.   c) Gọi M là trung điểm của AB. Tính AM.",
+   "giai": "a) Có, vì A và B cùng thuộc tia Ox và OA < OB (6 < 14). b) A nằm giữa O và B nên OA + AB = OB, suy ra AB = 14 − 6 = 8 cm. c) M là trung điểm AB nên AM = 8 : 2 = 4 cm."
+  },
+  {
+   "de": "Bài 3 (1,5 điểm). a) Tung một đồng xu 37 lần, mặt sấp xuất hiện 6 lần. Tính xác suất thực nghiệm của mặt sấp và mặt ngửa.   b) Điểm kiểm tra của 10 bạn: 7; 10; 8; 9; 8; 6; 7; 5; 6; 6. Có bao nhiêu bạn đạt từ 8 điểm trở lên? Chiếm bao nhiêu phần trăm?",
+   "giai": "a) Mặt sấp: 6/37; mặt ngửa: 31/37. b) Có 4 bạn đạt từ 8 điểm trở lên, chiếm 4/10 = 40%."
+  }
+ ]
+}
